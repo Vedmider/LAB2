@@ -15,10 +15,17 @@ public class TextInput implements InputService {
         try{
             byte[] encoded = Files.readAllBytes(Paths.get("InputText.txt"));
             content.add(new String(encoded, StandardCharsets.UTF_8));
+            System.out.println("Loaded text to String with length " + content.get(0).length());
+            System.out.println("Loaded text:\n");
+            System.out.println(content.get(0) + "\n");
+            System.out.println("Formatted text is:");
+            System.out.println(ParseText.removeAdditionalSpaces(content.get(0)));
             return content;
         } catch (IOException e) {
+            System.out.println("Can not load text from text file!");
             e.printStackTrace();
         }
+
         content.add("");
         return content;
     }

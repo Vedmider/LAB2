@@ -18,7 +18,9 @@ public class Text implements DuplicateCount {
 
     @Override
     public long countSentencesWithDuplicatedWords() {
-        return paragraphs.stream().mapToLong(paragraph -> paragraph.countSentencesWithDuplicatedWords()).sum();
+        return paragraphs.stream()
+                .mapToLong(paragraph -> paragraph.countSentencesWithDuplicatedWords())
+                .sum();
     }
 
     public int hashCode() {
