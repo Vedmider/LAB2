@@ -12,6 +12,7 @@
 # Compiled class file
 *.class
 
+.log
 .idea
 *.iml
 
